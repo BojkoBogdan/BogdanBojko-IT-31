@@ -1,20 +1,17 @@
-# Dev container
+# Практична №30 (П13) — стандартна бібліотека Python
 
-Open the repo in VS Code and run **Dev Containers: Reopen in Container**. The container has Python 3.12, `uv`, the MkDocs toolchain in `.venv` and Claude Code.
+## Перед здачею обов'язково персоналізуйте
+1. У `task1.py` замініть `NAME`, `SURNAME`, `GROUP` і розміри кімнати/дверей/вікна/плитки на власні вимірювання.
+2. У `task2.py` скопіюйте свій справжній `expenses.csv` з роботи 22 у `data/expenses.csv`. Формат рядка: `YYYY-MM-DD;category;amount;description`. Коментарі починайте з `#`.
+3. Для `task3.py` створіть копію власного каталогу з щонайменше 15 файлами, зміненими в різні місяці. Запускайте спочатку тільки `--dry-run`, а потім — лише на копії.
+4. У `task4.py` замініть `NAME`, `SURNAME`, `GROUP` і `YEAR` на свої дані. `YEAR` має бути вашим роком народження.
 
-```bash
-uv run mkdocs serve -a 0.0.0.0:8000
-```
+## Запуск
+З папки `lab30`:
+- `python task1.py`
+- `python task2.py`
+- `python task3.py --dry-run downloads_copy`
+- `python task3.py downloads_copy` (тільки після перевірки плану і тільки на копії)
+- `python task4.py` — запустіть двічі, щоб показати повторюваність прикладів.
 
-Claude Code inside the container keeps its login in a separate Docker volume (`CLAUDE_CONFIG_DIR=/home/vscode/.claude`), not in your host `~/.claude`. Run `claude` in the container terminal and sign in with the account you want to use there; your host login is not affected. The login survives container rebuilds. To sign out completely, delete the `claude-code-config-*` volume.
-
-GitHub CLI (`gh`) is installed too. Run `gh auth login` once in the container terminal; the login is kept in the `gh-config-*` volume and survives rebuilds.
-
-# Run locally
-
-```bash
-python3 -m venv env
-source  env/bin/activate
-pip3 install -r requirements.txt
-mkdocs serve --livereload
-```
+Не здавайте шаблон із чужими/вигаданими даними: персональні значення та реальні файли потрібно додати самостійно.
